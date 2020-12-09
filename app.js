@@ -11,8 +11,8 @@ window.addEventListener('load', () => {
         navigator.geolocation.getCurrentPosition(position => {
             long = position.coords.longitude;
             lati = position.coords.latitude;
-            console.log('position latitude: ', lati);
-            console.log('position longtitude: ', long);
+            // console.log('position latitude: ', lati);
+            // console.log('position longtitude: ', long);
 
             const proxy = `https://cors-anywhere.herokuapp.com/`;
             const apiKey = 'bb8e5fea12e1c2f342f01802c1abb090';
@@ -22,13 +22,13 @@ window.addEventListener('load', () => {
                 return response.json();
             })
                 .then(data => {
-                    console.log(data.weather[0].icon);
+                    // console.log(data.weather[0].icon);
                     const forecastIcon = data.weather[0].icon;
-                    console.log("Temperature: ", Math.round(data.main.temp));
+                    // console.log("Temperature: ", Math.round(data.main.temp));
                     const temperature = Math.round(data.main.temp);
                     const city = data.name;
                     const temperatureDescription = data.weather[0].description
-                    console.log('Description: ', temperatureDescription);
+                    // console.log('Description: ', temperatureDescription);
 
                     temperatureDegree.textContent = temperature;
                     tempDescription.textContent = temperatureDescription;
